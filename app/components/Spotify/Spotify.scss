@@ -1,23 +1,7 @@
-.spotify-container {
-  position: relative;
-  width: 24rem;
-  background-color: #1f2937f5;
-  padding: 20px;
-  overflow: hidden;
-  justify-content: space-between;
-  border-radius: 10px;
-}
-
-.cursor-move {
+.spotify-header {
   display: flex;
   justify-content: space-between;
-  cursor: move;
   color: white;
-}
-
-.close-icon {
-  display: block;
-  cursor: pointer;
   margin-bottom: 20px;
 }
 
@@ -44,4 +28,8 @@
 .reload-icon {
   color: white;
   cursor: pointer;
+}
+
+.hidden {
+  visibility: hidden;
 }
