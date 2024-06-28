@@ -1,0 +1,47 @@
+.spotify-container {
+  position: relative;
+  width: 24rem;
+  background-color: #1f2937f5;
+  padding: 20px;
+  overflow: hidden;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.cursor-move {
+  display: flex;
+  justify-content: space-between;
+  cursor: move;
+  color: white;
+}
+
+.close-icon {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-top: 20px;
+}
+
+.spotify-input {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    width: 90%;
+    background-color: transparent;
+    color: white;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.reload-icon {
+    color: white;
+    cursor: pointer;
+}
