@@ -22,26 +22,26 @@
 }
 
 .input-container {
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
-    margin-top: 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin-top: 20px;
 }
 
 .spotify-input {
-    border: 1px solid white;
-    border-radius: 5px;
-    padding: 5px;
-    width: 90%;
-    background-color: transparent;
-    color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  width: 90%;
+  background-color: transparent;
+  color: white;
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
 
 .reload-icon {
-    color: white;
-    cursor: pointer;
+  color: white;
+  cursor: pointer;
 }

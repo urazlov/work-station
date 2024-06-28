@@ -8,10 +8,8 @@ export interface IToggleSpotify {
 export interface IPosSpotify {
   spotifyPosX: number;
   spotifyPosY: number;
-  isLoaded: boolean;
   setSpotifyPos: (X: number, Y: number) => void;
   setSpotifyPosDefault: () => void;
-  setIsLoaded: (isLoaded: boolean) => void;
 }
 
 export interface IBackground {
