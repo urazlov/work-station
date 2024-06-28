@@ -25,9 +25,15 @@ export interface IPosTimer {
   setTimerPos: (X: number, Y: number) => void;
 }
 
-
+export interface ITodoItem {
+  text: string;
+  isDone: boolean;
+  id: number;
+}
 export interface IToDo {
+  items: ITodoItem[];
   isToDoToggled: boolean;
+  setItems: (items: ITodoItem[]) => void;
   setIsToDoToggled: (isToDoToggled: boolean) => void;
 }
 

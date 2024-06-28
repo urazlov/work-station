@@ -3,10 +3,15 @@ import "./Timer.scss";
 import { IoCloseSharp } from "react-icons/io5";
 import { useEffect, useState, useRef } from "react";
 
+const SECONDS = 5;
+const MINUTES = 20;
+
 export const Timer = () => {
   const { setIsTimerToggled } = useTimer();
-  const [time, setTime] = useState({ minutes: 0, seconds: 5 });
+
+  const [time, setTime] = useState({ minutes: 0, seconds: SECONDS });
   const [startTimer, setStartTimer] = useState("Start");
+
   const intervalRef = useRef<null | NodeJS.Timeout>(null);
 
   useEffect(() => {
@@ -17,6 +22,7 @@ export const Timer = () => {
           if (seconds === 0) {
             if (minutes === 0) {
               clearInterval(intervalRef.current!);
+              setStartTimer("Start");
               return { minutes: 0, seconds: 0 };
             }
             return { minutes: minutes - 1, seconds: 59 };
@@ -39,7 +45,7 @@ export const Timer = () => {
   function handleResetTimer() {
     clearInterval(intervalRef.current!);
     intervalRef.current = null;
-    setTime({ minutes: 0, seconds: 5 });
+    setTime({ minutes: 0, seconds: SECONDS });
     setStartTimer("Start");
   }
 
@@ -49,7 +55,7 @@ export const Timer = () => {
     <div className="timer-container widget-container">
       <div className="timer-header move">
         <p>Timer</p>
-        <IoCloseSharp className="pointer scale" onClick={() => setIsTimerToggled(false)} />
+        <IoCloseSharp className="pointer scale toggle" onClick={() => setIsTimerToggled(false)} />
       </div>
       <div className="timer-content">
         <p className="timer-content__time">

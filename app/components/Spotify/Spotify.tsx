@@ -32,7 +32,7 @@ export const Spotify = () => {
     <div className="spotify-container widget-container">
       <div className="spotify-header move">
         <p>Spotify</p>
-        <IoCloseSharp className="pointer scale" onClick={() => setIsSpotifyToggled(false)} />
+        <IoCloseSharp className="pointer scale toggle" onClick={() => setIsSpotifyToggled(false)} />
       </div>
 
       <div>
