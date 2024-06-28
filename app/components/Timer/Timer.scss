@@ -1,0 +1,36 @@
+
+.timer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timer-content {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  &__time {
+    font-weight: bold;
+    font-size: 5rem;
+  }
+}
+
+.timer-footer {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+
+  button {
+    padding: 5px 10px;
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    color: white;
+
+    &:hover {
+      background-color: blue;
+    }
+  }
+}

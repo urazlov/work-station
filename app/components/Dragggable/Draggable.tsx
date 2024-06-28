@@ -23,7 +23,6 @@ export const DWrapper = ({
 }) => {
   const [z, setZIndex] = useState(0);
   const nodeRef = React.useRef(null);
-  
 
   const changePosition = (data: DraggableData) => {
     setPosition(data.x, data.y);

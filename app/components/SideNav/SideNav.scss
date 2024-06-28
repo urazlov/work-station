@@ -1,0 +1,36 @@
+.side-nav-container {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.side-nav-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 5px;
+  background-color: white;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: black;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.active {
+    background-color: black;
+
+    svg {
+      color: white;
+    }
+  }
+}
