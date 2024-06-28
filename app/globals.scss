@@ -93,6 +93,12 @@ a {
   }
 }
 
+.toggle {
+  right: 10px;
+  top: 10px;
+  position: absolute;
+}
+
 .hidden .pointer,
 .hidden .scale {
   transition: none;

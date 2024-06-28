@@ -11,7 +11,7 @@ import { Todo } from "./components/Todo/Todo";
 export function Home() {
   const { isSpotifyToggled } = useSpotifyMusic();
   const { isTimerToggled } = useTimer();
-  const { isToDoToggled } = useToDo()
+  const { isToDoToggled } = useToDo();
 
   const { spotifyPosX, spotifyPosY, setSpotifyPos } = usePosSpotify();
   const { timerPosX, timerPosY, setTimerPos } = usePosTimer();

@@ -67,9 +67,19 @@ export const usePosTimer = create<IPosTimer>(
   )
 );
 
+// TODO
+
 export const useToDo = create<IToDo>(
   persist(
     (set, _) => ({
+      items: [
+        {
+          text: "Something do",
+          isDone: false,
+          id: Date.now(),
+        },
+      ],
+      setItems: items => set({ items }),
       isToDoToggled: true,
       setIsToDoToggled: isToDoToggled => set({ isToDoToggled }),
     }),

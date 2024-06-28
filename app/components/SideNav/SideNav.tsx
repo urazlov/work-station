@@ -1,5 +1,5 @@
 import { useSpotifyMusic, useTimer, useToDo } from "@/app/store";
-import { FaCalendarTimes, FaClock, FaList, FaListUl, FaSpotify } from "react-icons/fa";
+import { FaClock, FaListUl, FaSpotify } from "react-icons/fa";
 import clsx from "clsx";
 import "./SideNav.scss";
 

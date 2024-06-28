@@ -1,0 +1,93 @@
+.todo-container {
+  button {
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: transparent;
+    transition: 0.3s linear;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
+.todo-header {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 20px;
+  border-left: 3px solid rgba(33, 137, 218, 0.8);
+  background-color: rgba(106, 175, 229, 0.8);
+  color: black;
+  padding: 5px 10px;
+  cursor: default;
+  transition: 0.3s linear;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  position: relative;
+
+  &.active {
+    background-color: rgba(134, 239, 172, 0.9);
+    border-left: 3px solid green;
+    text-decoration: line-through;
+  }
+
+  .remove {
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    &:hover {
+        color: white;
+    }
+  }
+}
+
+.todo-icon {
+  height: 16px;
+}
+
+.todo-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.todo-add {
+  padding: 10px 10px 10px 5px;
+  background-color: rgba(106, 175, 229, 0.8);
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .done {
+    color: #1f2937f5;
+  }
+
+  input {
+    background-color: transparent;
+    border: none;
+    border-radius: 2px;
+    font-size: 1rem;
+    padding: 2px;
+    width: 80%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
