@@ -100,7 +100,9 @@ a {
 }
 
 .hidden .pointer,
-.hidden .scale {
+.hidden .scale,
+.hidden .todo-container button,
+.hidden .todo-item{
   transition: none;
 }
 
