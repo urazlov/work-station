@@ -1,5 +1,4 @@
 "use client";
-import dynamic from "next/dynamic";
 import { Village } from "./components/Backgrounds/Village/Village";
 import { DWrapper } from "./components/Dragggable/Draggable";
 import { Spotify } from "./components/Spotify/Spotify";
@@ -7,8 +6,9 @@ import { usePosSpotify, usePosTimer, usePosTodo, useSpotifyMusic, useTimer, useT
 import { SideNav } from "./components/SideNav/SideNav";
 import { Timer } from "./components/Timer/Timer";
 import { Todo } from "./components/Todo/Todo";
+import NoSSRWrapper from "./components/NoSSRWrapper/NoSSRWrapper";
 
-export function Home() {
+export default function Home() {
   const { isSpotifyToggled } = useSpotifyMusic();
   const { isTimerToggled } = useTimer();
   const { isToDoToggled } = useToDo();
@@ -18,7 +18,8 @@ export function Home() {
   const { toDoPosX, toDoPosY, setToDoPos } = usePosTodo();
 
   return (
-    <div>
+    <NoSSRWrapper>
+          <div>
       <Village />
       <SideNav />
       <DWrapper toggleHook={isSpotifyToggled} defaultX={spotifyPosX} defaultY={spotifyPosY} setPosition={setSpotifyPos}>
@@ -31,9 +32,7 @@ export function Home() {
         <Todo />
       </DWrapper>
     </div>
+    </NoSSRWrapper>
+
   );
 }
-
-export default dynamic(() => Promise.resolve(Home), {
-  ssr: false,
-});

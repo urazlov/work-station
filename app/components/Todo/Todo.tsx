@@ -5,7 +5,6 @@ import { FaCheck, FaTrash } from "react-icons/fa";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import clsx from "clsx";
 import { useState } from "react";
-import { ITodoItem } from "@/app/interfaces";
 
 export const Todo = () => {
   const { items, setIsToDoToggled, setItems } = useToDo();
