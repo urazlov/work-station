@@ -6,10 +6,9 @@ import "./Spotify.scss";
 import React from "react";
 
 export const Spotify = () => {
-  const { setIsSpotifyToggled } = useSpotifyMusic();
+  const { setIsSpotifyToggled, playlist, setPlaylist } = useSpotifyMusic();
 
   const [text, setText] = useState("");
-  const [playlist, setPlaylist] = useState("https://open.spotify.com/embed/playlist/1J3AKimB28rwECybTnh3ob");
 
   function changePlaylist() {
     if (!text.includes("https://open.spotify.com/playlist/")) {

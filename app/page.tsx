@@ -9,6 +9,7 @@ import NoSSRWrapper from "./components/NoSSRWrapper/NoSSRWrapper";
 import { BackgroundSelect } from "./components/BackgroundSelect/BackgroundSelect";
 import { Village } from "./components/Backgrounds/Village/Village";
 import { Waterfall } from "./components/Backgrounds/Waterfall/Waterfall";
+import { City } from "./components/Backgrounds/City/City";
 
 export default function Home() {
   const { isSpotifyToggled } = useSpotifyMusic();
@@ -21,9 +22,10 @@ export default function Home() {
   const { toDoPosX, toDoPosY, setToDoPos } = usePosTodo();
 
   const backgroundMap: Record<string, JSX.Element> = {
-    'village': <Village />,
-    'waterfall': <Waterfall />
-  }
+    village: <Village />,
+    waterfall: <Waterfall />,
+    city: <City/>
+  };
 
   return (
     <NoSSRWrapper>

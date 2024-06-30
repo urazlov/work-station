@@ -3,13 +3,13 @@ import "./Timer.scss";
 import { IoCloseSharp } from "react-icons/io5";
 import { useEffect, useState, useRef } from "react";
 
-const SECONDS = 5;
-const MINUTES = 20;
+const SECONDS = 10;
+const MINUTES = 0;
 
 export const Timer = () => {
   const { setIsTimerToggled } = useTimer();
 
-  const [time, setTime] = useState({ minutes: 0, seconds: SECONDS });
+  const [time, setTime] = useState({ minutes: MINUTES, seconds: SECONDS });
   const [startTimer, setStartTimer] = useState("Start");
 
   const intervalRef = useRef<null | NodeJS.Timeout>(null);
@@ -45,11 +45,25 @@ export const Timer = () => {
   function handleResetTimer() {
     clearInterval(intervalRef.current!);
     intervalRef.current = null;
-    setTime({ minutes: 0, seconds: SECONDS });
+    setTime({ minutes: MINUTES, seconds: SECONDS });
     setStartTimer("Start");
   }
 
   const { minutes, seconds } = time;
+
+  const handleMinutesChanged = (increment: boolean) => {
+    setTime(prevTime => ({
+      ...prevTime,
+      minutes: increment ? Math.min(prevTime.minutes + 1, 59) :  Math.max(prevTime.minutes - 1, prevTime.seconds ? 0 : 1)
+    }));
+  };
+
+  const handleSecondsChanged = (increment: boolean) => {
+    setTime(prevTime => ({
+      ...prevTime,
+      seconds: increment ? Math.min(prevTime.seconds + 1, 59) : Math.max(prevTime.seconds - 1, prevTime.minutes ? 0 : 1)
+    }));
+  };
 
   return (
     <div className="timer-container widget-container">
@@ -58,8 +72,20 @@ export const Timer = () => {
         <IoCloseSharp className="pointer scale toggle" onClick={() => setIsTimerToggled(false)} />
       </div>
       <div className="timer-content">
+        <div className="timer-content__inputs">
+          <div className="timer-content__custom-input">
+            <button onClick={() => handleMinutesChanged(false)}>-</button>
+            <input readOnly type="number" value={minutes} name="minutes" min={0} max={59} />
+            <button onClick={() => handleMinutesChanged(true)}>+</button>
+          </div>
+          <div className="timer-content__custom-input">
+            <button onClick={() => handleSecondsChanged(false)}>-</button>
+            <input readOnly type="number" value={seconds} name="seconds" min={0} max={59} />
+            <button onClick={() => handleSecondsChanged(true)}>+</button>
+          </div>
+        </div>
         <p className="timer-content__time">
-          {minutes}:{seconds.toString().length === 1 ? `0${seconds}` : seconds}
+          {minutes}:{seconds.toString().padStart(2, '0')}
         </p>
       </div>
       <div className="timer-footer">
@@ -69,7 +95,7 @@ export const Timer = () => {
         <button onClick={handleResetTimer} className="pointer">
           Reset
         </button>
-        {minutes === 0 && seconds === 0 ? <audio preload="auto" autoPlay src="/music/done.wav"></audio> : ""}
+        {minutes === 0 && seconds === 0 && <audio preload="auto" autoPlay src="/music/done.wav"></audio>}
       </div>
     </div>
   );
