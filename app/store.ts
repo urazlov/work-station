@@ -6,6 +6,8 @@ import { IToggleSpotify, IPosSpotify, IBackground, ITimer, IPosTimer, IToDo, IPo
 export const useSpotifyMusic = create<IToggleSpotify>(
   persist(
     (set, _) => ({
+      playlist: 'https://open.spotify.com/embed/playlist/1J3AKimB28rwECybTnh3ob',
+      setPlaylist: playlist => set({playlist}),
       isSpotifyToggled: true,
       setIsSpotifyToggled: isSpotifyToggled => set({ isSpotifyToggled }),
     }),
@@ -57,7 +59,7 @@ export const useTimer = create<ITimer>(
 export const usePosTimer = create<IPosTimer>(
   persist(
     (set, _) => ({
-      timerPosX: 500,
+      timerPosX: 550,
       timerPosY: 10,
       setTimerPos: (X, Y) => set({ timerPosX: X, timerPosY: Y }),
     }),
@@ -92,7 +94,7 @@ export const useToDo = create<IToDo>(
 export const usePosTodo = create<IPosToDo>(
   persist(
     (set, _) => ({
-      toDoPosX: 500,
+      toDoPosX: 550,
       toDoPosY: 250,
       setToDoPos: (X, Y) => set({ toDoPosX: X, toDoPosY: Y }),
     }),

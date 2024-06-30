@@ -1,6 +1,8 @@
 export interface IToggleSpotify {
   isSpotifyToggled: boolean;
   setIsSpotifyToggled: (isSpotifyToggled: boolean) => void;
+  playlist: string;
+  setPlaylist: (playlist: string) => void;
 }
 
 export interface IPosSpotify {

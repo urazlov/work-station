@@ -16,7 +16,11 @@ export const BackgroundSelect = () => {
     {
       content: "Waterfall",
       value: "waterfall",
-    }
+    },
+    {
+      content: "City",
+      value: "city",
+    },
   ];
 
   const handleChooseBackgound = (value: string) => {
