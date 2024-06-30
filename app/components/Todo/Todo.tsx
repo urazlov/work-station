@@ -21,11 +21,11 @@ export const Todo = () => {
         return item;
       })
     );
-  }
+  };
 
   const handleDeleteTask = (id: number) => {
-    setItems(items.filter((i) => i.id !== id));
-  }
+    setItems(items.filter(i => i.id !== id));
+  };
 
   const handleAddTask = () => {
     if (!text) return;
@@ -35,13 +35,13 @@ export const Todo = () => {
     setItems(tasks);
     setText("");
     setAddMode(false);
-  }
+  };
 
   const handleEnterKeyDown = (key: string) => {
     if (key === "Enter") {
       handleAddTask();
     }
-  }
+  };
 
   return (
     <div className="widget-container todo-container">
@@ -79,12 +79,14 @@ export const Todo = () => {
                 {item.isDone ? <RiArrowGoBackFill /> : <FaCheck />}
               </span>
               <span>{item.text}</span>
-            <FaTrash onClick={() => handleDeleteTask(item.id)} className="pointer todo-icon remove"/>
+              <FaTrash onClick={() => handleDeleteTask(item.id)} className="pointer todo-icon remove" />
             </div>
           );
         })}
       </div>
-      <div className="todo-footer">{items.length == 0 ? "" : <button onClick={() => setItems([])}>Clear All</button>}</div>
+      <div className="todo-footer">
+        {items.length == 0 ? "" : <button onClick={() => setItems([])}>Clear All</button>}
+      </div>
     </div>
   );
 };

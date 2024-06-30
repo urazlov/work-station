@@ -1,0 +1,53 @@
+.background-select {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+  .background-select-button {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: var(--main-blue);
+    transition: 0.3s linear;
+  }
+
+  .background-select-buttons {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 12rem;
+    background-color: var(--main-blue);
+
+    button {
+      padding: 10px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: white;
+      border: none;
+      border-bottom: 1px solid white;
+      width: 100%;
+      background-color: var(--main-blue);
+      transition: 0.3s linear;
+      text-align: left;
+
+      &:hover {
+        background-color: var(--hover-blue);
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &.active {
+        background-color: var(--hover-blue);
+      }
+    }
+  }
+}
